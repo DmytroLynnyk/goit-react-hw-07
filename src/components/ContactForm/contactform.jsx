@@ -3,7 +3,7 @@ import css from './contactform.module.css';
 import { useId } from 'react';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
-// import { addUser } from '../../redux/contactsSlice';
+import { addContact } from '../../redux/operations';
 
 const userSchema = Yup.object().shape({
   name: Yup.string()
@@ -31,7 +31,7 @@ export const ContactForm = () => {
         }}
         validationSchema={userSchema}
         onSubmit={(values, actions) => {
-          // dispatch(addUser(values));
+          dispatch(addContact(values));
           actions.resetForm();
         }}
       >
