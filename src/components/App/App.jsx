@@ -1,9 +1,9 @@
 import './App.css';
-import { ContactList } from '../ContactList/contactlist';
-import { ContactForm } from '../ContactForm/contactform';
-import { SearchBox } from '../SearchBox/searchbox';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
+import { ContactsList } from '../ContactsList/ContactsList';
+import { ContactForm } from '../ContactForm/ContactForm';
+import { SearchBox } from '../SearchBox/SearchBox';
 import { selectError, selectIsLoading } from '../../redux/selectors';
 import { fetchContacts } from '../../redux/operations';
 
@@ -22,7 +22,7 @@ export const App = () => {
       <ContactForm />
       <SearchBox />
       {isLoading && !error && <b>Request is in progress</b>}
-      <ContactList />
+      <ContactsList />
     </div>
   );
 };
